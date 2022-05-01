@@ -24,18 +24,21 @@ const configurationObject = {
   .then(function (object) {
     // From this object, find the new id and append this value to the DOM.
     // let newId = document.querySelector(object);
-    
-    let newId = document.querySelector('section#user h4');
-    
+    let bo = document.querySelector("body")
+    let newI = document.createElement("p")
 
-    newId.innerText = object.id;
-  
+    newI.innerHTML = object.id
+    
+    bo.append(newI);
 
     
   })
   .catch(function (error) {
     alert("Bad things! Ragnarők!");
-    console.log(error.message);
+    let bo = document.querySelector("body")
+    let err = document.createElement("p")
+    err.innerHTML = error.message
+    bo.append(err);
   });
   
 
